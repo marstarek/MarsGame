@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MarsGame</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+                   maximum-scale=1.0, user-scalable=no " />
+    <link rel=" stylesheet " type=" text/css " href=" css/bootstrap.min.css " />
+    <link rel=" stylesheet " type=" text/css " href=" ./css/style.css " />
+    <link rel=" stylesheet " href=" https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css " />
+</head>
+
+<body onload="loader() " style="margin:0; ">
+    <div class="loader "></div>
+
+    <div id="page-container " style="display:none; " class="page-container animate-bottom ">
+        <div class="content ">
+
+
+            <div class="row g-0 m-0 align-items-center py-4 ">
+                <div class="col-xs-8  col  d-flex">
+                    <h1>What&rsquo;s in the basket? Choose and write.</h1>
+                </div>
+                <div class="col-xs-4 col d-flex justify-content-end ">
+                    <div class="help_icon ">
+                        <img src="../img/help_icon.png " class="header-icon " onclick=" help() " alt=" " />
+                    </div>
+                    <div class="resourse_icon ">
+                        <img src="../img/resourse_icon.png " class="header-icon " id="myBtn" alt=" " />
+                    </div>
+                </div>
+            </div>
+
+            <!-- start center div -->
+            <div class="main row w-100 h-100 m-0 g-0 ">
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="close"><img src="./img/close_icon.png" class="w-100 h-100" alt=""></div>
+                        <img src="../img/p2.png" class="w-100 h-100 " alt="">
+                    </div>
+                </div>
+                <div class="col-xs-12 choices-items bg-white ">
+                    <div class="col-xs-12 img-options ">
+                        <div class="items-wrapper ">
+                            <span class="choice  " data-elem="scissors ">scissors</span>
+                            <span class="choice " data-elem="eraser ">eraser</span>
+                            <span class="choice  " data-elem="ruler ">ruler</span>
+                            <span class="choice " data-elem="bag ">bag</span>
+                            <br>
+                            <span class="choice  " data-elem="pencil case ">pencil case</span>
+                            <span class="choice " data-elem="pencil ">pencil</span>
+                            <span class="choice " data-elem="book ">book</span>
+                            <span class="choice " data-elem="pen ">pen</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 p-0 ">
+                        <div class="optionContainer ">
+                            <image class="img-fluid w-100 main-img " src="./img/p15e11.png "></image>
+                            <div class="row options-wrapper pb-2 options ">
+                                <div class="col-sm-4 ">
+                                    <div class="answer option_1 ">
+                                        <p class="invisible ">123456</p>
+                                    </div>
+                                    <div class="answer option_2 ">
+                                        <p class="invisible ">123456</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 ">
+                                    <div class="answer option_3 ">
+                                        <p class="invisible ">123456</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 ">
+                                    <div class="answer option_4 ">
+                                        <p class="invisible ">123456</p>
+                                    </div>
+                                    <div class="answer option_5 ">
+                                        <p class="invisible ">123456</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- end center div -->
+            <div class="row footer pt-4 flex-nowrap ">
+                <div class="col-xs-6 justify-content-start d-flex justify-content-start w-50 ">
+                    <img src="../img/replay_icon.png " class="h-75 " onclick="refresh() " alt=" " />
+                </div>
+                <div class="col-xs-6 d-flex justify-content-start  w-50 ">
+                    <img src="../img/showAns_icon.png " class="h-75 " onclick="showAnswers() " alt=" " />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>
+
+<script src="./js/bootstrap.min.js "></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11 "></script>
+<script src="./js/custom.js " defer></script>
+</body>
+
+</html>
