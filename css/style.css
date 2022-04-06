@@ -4,7 +4,7 @@ html {
 
 .content {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     margin: 0 auto;
     transition: all 500ms;
 }
@@ -18,59 +18,57 @@ html {
 }
 
 p {
-    font-size: 3.8rem;
+    font-size: 1rem;
     margin: 0;
 }
 
 h1 {
-    font-size: 2.2rem;
+    font-size: 1rem;
     margin-top: 0;
     margin-bottom: 0;
-    padding-left: 2rem;
+    padding-left: 1rem;
     font-weight: normal;
 }
 
 .header-icon {
-    height: 4.0625rem;
-    width: 4.0625rem;
+    height: 2.0625rem;
+    width: 2.0625rem;
     margin-right: 5px;
 }
 
-.help_icon .header-icon {
-    margin-right: 2.8125rem;
+.footer-icon {
+    height: 2.0625rem;
+    width: 2.0625rem;
 }
 
-.bi {
-    padding: 0;
-    font-size: 1rem;
-    color: #0fa0c5;
-    font-size: 35px;
+.help_icon .header-icon {
+    margin-right: 1.8125rem;
 }
 
 .choices-items {
-    border: 4px rgb(247, 65, 9) solid;
+    border: 3px rgb(247, 65, 9) solid;
     border-radius: 10px;
     width: 96%;
     margin: -8px auto;
 }
 
 .choice {
-    line-height: 1.7;
-    margin: 6px 14px;
+    line-height: .7;
+    margin: 2px 5px;
     font-weight: 500;
-    font-size: 2.8rem;
-    border-radius: 18px;
-    padding: 4px 18px;
-    border: 3px solid #0fa0c5;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #0fa0c5;
     cursor: pointer;
     transition: all 200ms ease-in-out;
 }
 
 .choice-js {
-    line-height: 1.7;
+    line-height: .7;
     margin: 0 12px;
     font-weight: 400;
-    font-size: 3.8rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -174,8 +172,8 @@ h1 {
     display: none;
     text-align: center;
     position: absolute;
-    width: 1360px;
-    height: 760px;
+    width: 640px;
+    height: 480px;
     top: 0;
     left: 0;
     right: 0;
@@ -185,8 +183,8 @@ h1 {
 }
 
 .img-answers {
-    padding-top: 1.5rem!important;
-    padding-bottom: 1.5rem!important
+    padding-top: .5rem!important;
+    padding-bottom: .5rem!important
 }
 
 .modal {
@@ -197,29 +195,29 @@ h1 {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 71%;
     overflow: auto;
-    padding-top: 105px;
+    padding-top: 57px;
 }
 
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 35px;
-    border: 7px rgb(247, 65, 9) solid;
+    padding: 13px;
+    border: 3px rgb(247, 65, 9) solid;
     width: 96%;
-    left: 25px;
+    left: 13px;
     flex-direction: row-reverse;
     flex-wrap: wrap;
-    height: 102%;
+    height: 71%;
     z-index: 1253453;
     position: fixed;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .close {
-    width: 60px;
-    height: 60px;
+    width: 35px;
+    height: 35px;
     position: absolute;
     right: 9px;
     top: 9px;

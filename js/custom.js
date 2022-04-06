@@ -34,24 +34,28 @@ function clickChoice(e) {
     addColorToChoices(e.target)
     clickedChoice = e.target.dataset.elem.trim();
 }
+var correctImg = document.createElement('img');
+correctImg.src = '../img/tikMark-small.png';
+var wrongImg = document.createElement('img');
+wrongImg.src = '../img/crossMark-small.png';
 
 function answerclicked(e) {
     if (clickedChoice && !correctClicked.includes(clickedChoice)) {
         if (!e.target.innerHTML.includes(123456)) return;
         if (!correctAnswersArray.includes(clickedChoice)) {
-            e.target.innerHTML = ` <span class="choice-js">${clickedChoice} <i class="bi bi-x-lg text-danger xicon"></i></span>`;
+            e.target.innerHTML = ` <span class="choice-js">${clickedChoice} </span>`;
             correctAudio.play();
-            let xicon = document.querySelector(".xicon");
+            e.target.appendChild(wrongImg);
 
             function startBlinking() {
                 myInterval2 = setInterval(function() {
                     (function() {
-                        xicon.style.visibility = "visible";
+                        wrongImg.style.visibility = "visible";
                         myInterval = setTimeout(function() {
-                            xicon.style.visibility = "hidden";
+                            wrongImg.style.visibility = "hidden";
                         }, 200);
                     })()
-                }, 400);
+                }, 300);
             }
             startBlinking();
             setTimeout(function() {
@@ -62,7 +66,8 @@ function answerclicked(e) {
             return;
         } else {
             correctClicked.push(clickedChoice);
-            e.target.innerHTML = ` <span class="choice-js">${clickedChoice} <i class="bi bi-check-lg text-success"></i></span>`;
+            e.target.innerHTML = ` <span class="choice-js">${clickedChoice} <img src='../img/tikMark-small.png' alt="" /> </span>`;
+
             incorrectAudio.play();
             removeChoice(clickedChoice)
         }
@@ -104,8 +109,9 @@ function refresh() {
 // base = 8w 6h
 // windo= 4/3=> 5/3
 function rescaleWindow(e) {
-    let clientWidth = 1280;
-    let clientHeight = 960;
+
+    let clientWidth = 640;
+    let clientHeight = 480;
     let pagecontainer = document.querySelector(".page-container");
     const basefraction = clientWidth / clientHeight;
     const windowfraction = window.innerWidth / window.innerHeight;
