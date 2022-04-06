@@ -1,26 +1,4 @@
-// preLoader 
 var myVar;
-
-function loader() {
-    myVar = setTimeout(showContent, 200);
-}
-
-function showContent() {
-    document.querySelector(".loader").style.display = "none";
-    document.querySelector(".page-container").style.display = "block";
-}
-// alert 
-function showimg() {
-    Swal.fire({
-        imageUrl: "../img/p2.png",
-        showCloseButton: true,
-        imageWidth: `100%`,
-        imageHeight: `100%`,
-        showConfirmButton: false,
-        width: `50%`,
-        padding: 2,
-    });
-}
 let correctAnswersArray = ["eraser", "ruler", "pencil", "book", "pen"];
 let correctClicked = [];
 let answersfields = document.querySelectorAll(".answer");
@@ -30,11 +8,19 @@ var correctAudio = new Audio("../Windows 7 Error.mp3");
 var incorrectAudio = new Audio("../notification.mp3");
 let choicesItems = document.querySelector(".choices-items")
 
+function loader() {
+    myVar = setTimeout(showContent, 200);
+}
+
+function showContent() {
+    document.querySelector(".loader").style.display = "none";
+    document.querySelector(".page-container").style.display = "block";
+}
 for (const choiceElem of choices) {
     choiceElem.addEventListener("click", clickChoice);
 }
 for (const answerElem of answersfields) {
-    answerElem.addEventListener("click", optionclicked);
+    answerElem.addEventListener("click", answerclicked);
 }
 
 function addColorToChoices(clickedAnswer) {
@@ -49,7 +35,7 @@ function clickChoice(e) {
     clickedChoice = e.target.dataset.elem.trim();
 }
 
-function optionclicked(e) {
+function answerclicked(e) {
     if (clickedChoice && !correctClicked.includes(clickedChoice)) {
         if (!e.target.innerHTML.includes(123456)) return;
         if (!correctAnswersArray.includes(clickedChoice)) {

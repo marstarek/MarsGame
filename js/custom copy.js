@@ -31,7 +31,7 @@ for (const choiceElem of choices) {
     choiceElem.addEventListener("click", clickChoice);
 }
 for (const answerElem of answersfields) {
-    answerElem.addEventListener("click", optionclicked);
+    answerElem.addEventListener("click", answerclicked);
 }
 
 function addColorToChoices(clickedAnswer) {
@@ -46,7 +46,7 @@ function clickChoice(e) {
     clickedChoice = e.target.dataset.elem.trim();
 }
 
-function optionclicked(e) {
+function answerclicked(e) {
     if (clickedChoice && !correctClicked.includes(clickedChoice)) {
         if (!e.target.innerHTML.includes(123456)) return;
         if (!bagArray.includes(clickedChoice)) {

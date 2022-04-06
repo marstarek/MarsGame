@@ -26,7 +26,8 @@ h1 {
     font-size: 2.2rem;
     margin-top: 0;
     margin-bottom: 0;
-    font-weight: 500;
+    padding-left: 2rem;
+    font-weight: normal;
 }
 
 .header-icon {
@@ -47,7 +48,6 @@ h1 {
 }
 
 .choices-items {
-    padding-top: 21px;
     border: 4px rgb(247, 65, 9) solid;
     border-radius: 10px;
     width: 96%;
@@ -69,7 +69,7 @@ h1 {
 .choice-js {
     line-height: 1.7;
     margin: 0 12px;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 3.8rem;
     cursor: pointer;
 }
@@ -98,23 +98,6 @@ h1 {
     visibility: hidden;
 }
 
-.swal2-popup {
-    display: none;
-    position: relative;
-    box-sizing: border-box;
-    grid-template-columns: minmax(0, 100%);
-    width: 50%;
-    max-width: 100%;
-    padding: 0 0 0.25em;
-    border: none;
-    border-radius: 5px;
-    background: #fff;
-    color: #545454;
-    font-family: inherit;
-    font-size: 1rem;
-    z-index: 1545424242;
-}
-
 .wrapper {
     width: 60%;
 }
@@ -123,11 +106,11 @@ h1 {
     transition: ease-in-out .1s
 }
 
-.optionContainer {
+.answerContainer {
     position: relative;
 }
 
-.options-wrapper {
+.answers-wrapper {
     position: absolute;
     bottom: 8px;
     display: flex;
@@ -201,9 +184,9 @@ h1 {
     transition: all 500ms ease-in-out;
 }
 
-.img-options {
-    padding-top: 1rem!important;
-    padding-bottom: 1rem!important
+.img-answers {
+    padding-top: 1.5rem!important;
+    padding-bottom: 1.5rem!important
 }
 
 .modal {
@@ -214,25 +197,32 @@ h1 {
     left: 0;
     top: 0;
     width: 100%;
-    height: 98%;
+    height: 100%;
     overflow: auto;
+    padding-top: 105px;
 }
 
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 30px;
-    border: 4px solid hsl(11deg 100% 62%);
-    width: 97%;
+    padding: 35px;
+    border: 7px rgb(247, 65, 9) solid;
+    width: 96%;
+    left: 25px;
     flex-direction: row-reverse;
     flex-wrap: wrap;
-    height: 100%;
+    height: 102%;
+    z-index: 1253453;
+    position: fixed;
+    border-radius: 15px;
 }
 
 .close {
-    display: flex;
-    justify-content: flex-end;
-    width: 20px;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 9px;
+    top: 9px;
 }
 
 .close:hover,
