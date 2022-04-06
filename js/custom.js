@@ -7,6 +7,17 @@ let clickedChoice;
 var correctAudio = new Audio("../Windows 7 Error.mp3");
 var incorrectAudio = new Audio("../notification.mp3");
 let choicesItems = document.querySelector(".choices-items")
+var modal = document.getElementById("myModal");
+var helpModal = document.getElementById("myhelpModal");
+var btn = document.getElementById("myBtn");
+var helpBtn = document.getElementById("myBtn2");
+var span = document.getElementsByClassName("close")[0];
+var correctImg = document.createElement('img');
+correctImg.src = '../img/tikMark-small.png';
+var wrongImg = document.createElement('img');
+wrongImg.src = '../img/crossMark-small.png';
+wrongImg.style.width = "20px"
+wrongImg.style.height = "20px"
 
 function loader() {
     myVar = setTimeout(showContent, 200);
@@ -34,16 +45,13 @@ function clickChoice(e) {
     addColorToChoices(e.target)
     clickedChoice = e.target.dataset.elem.trim();
 }
-var correctImg = document.createElement('img');
-correctImg.src = '../img/tikMark-small.png';
-var wrongImg = document.createElement('img');
-wrongImg.src = '../img/crossMark-small.png';
+
 
 function answerclicked(e) {
     if (clickedChoice && !correctClicked.includes(clickedChoice)) {
         if (!e.target.innerHTML.includes(123456)) return;
         if (!correctAnswersArray.includes(clickedChoice)) {
-            e.target.innerHTML = ` <span class="choice-js">${clickedChoice} </span>`;
+            e.target.innerHTML = ` <span class="addedChoice">${clickedChoice} </span>`;
             correctAudio.play();
             e.target.appendChild(wrongImg);
 
@@ -66,8 +74,8 @@ function answerclicked(e) {
             return;
         } else {
             correctClicked.push(clickedChoice);
-            e.target.innerHTML = ` <span class="choice-js">${clickedChoice} <img src='../img/tikMark-small.png' alt="" /> </span>`;
-
+            e.target.innerHTML = ` <span class="addedChoice">${clickedChoice} <img src='../img/tikMark-small.png' alt="" style="width: 20px;
+            height: 20px; " /> </span>`;
             incorrectAudio.play();
             removeChoice(clickedChoice)
         }
@@ -81,7 +89,8 @@ function showAnswers() {
         removeChoice(correctAnswersArray[index]);
         answersfields[
             index
-        ].innerHTML = `<span class="choice-js">${answerelm} <i class="bi bi-check-lg text-success"></i></span>`;
+        ].innerHTML = ` <span class="addedChoice" >${answerelm} <img src='../img/tikMark-small.png' style="width: 20px;
+        height: 20px; " alt="" /> </span>`
     });
 
 }
@@ -105,41 +114,36 @@ function refresh() {
     correctClicked = []
 }
 
-
-// base = 8w 6h
-// windo= 4/3=> 5/3
 function rescaleWindow(e) {
-
-    let clientWidth = 640;
-    let clientHeight = 480;
+    let contenttWidth = 640;
+    let contentHeight = 480;
     let pagecontainer = document.querySelector(".page-container");
-    const basefraction = clientWidth / clientHeight;
+    const firstfraction = contenttWidth / contentHeight;
     const windowfraction = window.innerWidth / window.innerHeight;
-    if (windowfraction > basefraction) {
-        // العرض اكبر فا هنشتغل بنسبه الطول 
-        const fraction = window.innerHeight / clientHeight;
-        // النسبه اللي اتغير بيها 
-        pagecontainer.style.left = `${(window.innerWidth - clientWidth * fraction) / 2
+    if (windowfraction > firstfraction) {
+        const fraction = window.innerHeight / contentHeight;
+        pagecontainer.style.left = `${(window.innerWidth - contenttWidth * fraction) / 2
             }px`;
         pagecontainer.style.transform = `scale(${fraction})`;
-        console.log(fraction);
         return;
     }
     pagecontainer.style.left = `0px`
-    pagecontainer.style.transform = `scale(${window.innerWidth / clientWidth
+    pagecontainer.style.transform = `scale(${window.innerWidth / contenttWidth
         })`
 }
 window.addEventListener("resize", rescaleWindow);
 window.addEventListener("load", rescaleWindow);
-
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
+// modal
 btn.onclick = function() {
     modal.style.display = "block";
 }
-span.onclick = function() {
+helpBtn.onclick = function() {
+    helpModal.style.display = "block";
+}
+
+function closeModal() {
     modal.style.display = "none";
+    helpModal.style.display = "none";
 }
 window.onclick = function(event) {
     if (event.target == modal) {

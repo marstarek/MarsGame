@@ -50,7 +50,7 @@ function answerclicked(e) {
     if (clickedChoice && !correctClicked.includes(clickedChoice)) {
         if (!e.target.innerHTML.includes(123456)) return;
         if (!bagArray.includes(clickedChoice)) {
-            e.target.innerHTML = ` <span class="choice-js">${clickedChoice} <i class="bi bi-x-lg text-danger xicon"></i></span>`;
+            e.target.innerHTML = ` <span class="addedChoice">${clickedChoice} <i class="bi bi-x-lg text-danger xicon"></i></span>`;
             // var audio = new Audio("../mixkit-electric-fence-fx-2968.wav");
             correctaudio.play();
             let xicon = document.querySelector(".xicon");
@@ -75,7 +75,7 @@ function answerclicked(e) {
             return;
         } else {
             correctClicked.push(clickedChoice);
-            e.target.innerHTML = ` <span class="choice-js">${clickedChoice} <i class="bi bi-check-lg text-success"></i></span>`;
+            e.target.innerHTML = ` <span class="addedChoice">${clickedChoice} <i class="bi bi-check-lg text-success"></i></span>`;
             var audio = new Audio("../XRZU42L-correct-answer-2.mp3");
             audio.play();
             deleteAnswer(clickedChoice)
@@ -112,13 +112,13 @@ function showAnswers() {
     for (let i = 0; i < answersfields.length; i++) {
         answersfields[
             i
-        ].innerHTML = `<span class="choice-js"> <i class="bi bi-check-lg text-success"></i></span>`;
+        ].innerHTML = `<span class="addedChoice"> <i class="bi bi-check-lg text-success"></i></span>`;
     }
     answersfields.forEach((spanelm, index) => {
         const answerelm = correctAnswersArray[index];
         answersfields[
             index
-        ].innerHTML = `<span class="choice-js">${answerelm} <i class="bi bi-check-lg text-success"></i></span>`;
+        ].innerHTML = `<span class="addedChoice">${answerelm} <i class="bi bi-check-lg text-success"></i></span>`;
     });
 }
 
