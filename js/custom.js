@@ -107,16 +107,16 @@ function rescaleWindow(e) {
     let clientWidth = 1280;
     let clientHeight = 960;
     let pagecontainer = document.querySelector(".page-container");
-    const baseRatio = clientWidth / clientHeight;
-    const windowRatio = window.innerWidth / window.innerHeight;
-    if (windowRatio > baseRatio) {
+    const basefraction = clientWidth / clientHeight;
+    const windowfraction = window.innerWidth / window.innerHeight;
+    if (windowfraction > basefraction) {
         // العرض اكبر فا هنشتغل بنسبه الطول 
-        const ratio = window.innerHeight / clientHeight;
+        const fraction = window.innerHeight / clientHeight;
         // النسبه اللي اتغير بيها 
-        pagecontainer.style.left = `${(window.innerWidth - clientWidth * ratio) / 2
+        pagecontainer.style.left = `${(window.innerWidth - clientWidth * fraction) / 2
             }px`;
-        pagecontainer.style.transform = `scale(${ratio})`;
-        console.log(ratio);
+        pagecontainer.style.transform = `scale(${fraction})`;
+        console.log(fraction);
         return;
     }
     pagecontainer.style.left = `0px`
