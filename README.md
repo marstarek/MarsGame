@@ -1,2 +1,2 @@
 # MarsGame
-deployed 
+deployed  https://marstarek.github.io/MarsGame/
